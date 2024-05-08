@@ -9,7 +9,7 @@ export function createNewUser(user) {
   const newUser = {
     id: seq,
     name: user.name,
-    userName: user.username,
+    userName: user.userName,
   };
 
   if (user.password) {

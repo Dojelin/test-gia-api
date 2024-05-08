@@ -4,8 +4,8 @@
   "description": "Test d'entretien",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon --experimental-vm-modules app.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "Dojelin Quijada",
   "license": "ISC",
@@ -14,5 +14,8 @@
     "crypto-js": "^4.2.0",
     "express": "^4.19.2",
     "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
