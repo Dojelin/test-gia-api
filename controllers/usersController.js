@@ -4,6 +4,7 @@ import {
   findUserById,
   updateUser,
   deleteUser,
+  showPassword,
 } from "../services/userService.js";
 
 export default function controller(app) {
@@ -25,5 +26,9 @@ export default function controller(app) {
 
   app.delete("/users/:id", (req, res) => {
     res.send(deleteUser(Number(req.params.id)));
+  });
+
+  app.get("/users/password/:id", (req, res) => {
+    res.send(showPassword(Number(req.params.id)));
   });
 }
