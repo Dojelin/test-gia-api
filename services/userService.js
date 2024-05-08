@@ -1,43 +1,47 @@
+let seq = 0;
 
-var users = [{
-    id: 1,
-    name: 'Dummy Desjardins',
-    username: 'dummy123'
-}];
+let users = [];
 
+/* Create a new user */
 export function createNewUser(user) {
-    users.push(user);
-    return user;
-  }
+  users.push({ id: seq, ...user });
 
-export function  findAllUsers() {
-    return users;
-  }
+  seq++;
+  return user;
+}
 
+/* Return all users */
+export function findAllUsers() {
+  return users;
+}
+
+/* Return the specified user by Id */
 export function findUserById(id) {
-    const user = users.find((user) => user.id === id);
+  const user = users.find((user) => user.id === id);
 
-    if(!user){
-        throw new Error('User not found');
+  if (!user) {
+    throw new Error("User not found");
+  }
+  return user;
+}
+
+/* Update a user by Id */
+export function updateUser(id, updatedUser) {
+  users = users.map((user) => {
+    if (user.id === id) {
+      return { ...user, ...updatedUser };
     }
     return user;
-  }
+  });
 
-export function updateUser(id, updatedUser) {
-    users = users.map(user => {
-        if(user.id === id){
-            return {...user, ...updatedUser};
-        }
-        return user;
-    });
+  return findUserById(id);
+}
 
-    return findUserById(id);
-  }
+/* Delete a specific user */
+export function deleteUser(id) {
+  const toBeRemoved = findUserById(id);
 
-  export function deleteUser(id) {
-    const toBeRemoved = findUserById(id);
+  users = users.filter((user) => user.id !== id);
 
-    users = users.filter(user => user.id !== id);
-
-    return toBeRemoved;
-  }
+  return toBeRemoved;
+}

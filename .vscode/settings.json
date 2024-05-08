@@ -1,0 +1,31 @@
+// ==========================================
+// Project settings
+// ==========================================
+{
+  // ==========================================
+  // Newlines standardized to "\n".
+  // ==========================================
+  "files.eol": "\n",
+  // ==========================================
+  // Indentation standardized to 2 spaces.
+  // ==========================================
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
+  "editor.insertSpaces": true,
+  // ==========================================
+  // Automatically format the code when a file
+  // is saved. You can disable this if you dislike
+  // the feature, but then you have to make sure
+  // your code is properly formatted before commiting
+  // (or else the tests will fail, since a tslint test
+  // will be performed).
+  // ==========================================
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  }
+}
