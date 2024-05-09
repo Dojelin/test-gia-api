@@ -9,6 +9,11 @@ app.use(express.json());
 // Add routes
 routes(app);
 
+//Middleware to handler errors
+app.use((err, req, res, next) => {
+  res.status(500).send(err.message);
+});
+
 app.listen(3000, function () {
   console.log("Listening on port 3000!");
 });

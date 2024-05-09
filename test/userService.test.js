@@ -52,4 +52,15 @@ describe("User service", () => {
 
     expect(deletedUser).toBeDefined();
   });
+
+  test("Should return error deleting a user that not exist", () => {
+    let deletedUser;
+    try {
+      deletedUser = deleteUser(0);
+    } catch (error) {
+      expect(error.message).toEqual("User not found");
+    }
+
+    expect(deletedUser).toBeUndefined();
+  });
 });
