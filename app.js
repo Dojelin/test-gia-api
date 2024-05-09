@@ -1,4 +1,10 @@
 import express from "express";
+import { initDatabase } from "./repository/userRepository.js";
+
+//Start the database
+initDatabase();
+
+//Start application
 var app = express();
 
 import routes from "./controllers/usersController.js";
