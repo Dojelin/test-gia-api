@@ -4,7 +4,8 @@
   "description": "Test d'entretien",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon --experimental-vm-modules app.js",
+    "server": "node app.js",
+    "nodemon": "nodemon app.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "Dojelin Quijada",
